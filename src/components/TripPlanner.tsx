@@ -135,7 +135,8 @@ export default function TripPlanner({ onScrollToTaxi }: TripPlannerProps) {
   };
 
   return (
-    <section id="trip-planner" className="py-16 sm:py-24 bg-stone-900 text-white relative overflow-hidden">
+    <section id="trip-planner" className="py-16 sm:py-24 bg-[#053b32]
+     text-white relative overflow-hidden">
       {/* Background glow styling */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute top-1/4 -left-40 w-96 h-96 bg-emerald-500 rounded-full blur-3xl" />
@@ -145,7 +146,7 @@ export default function TripPlanner({ onScrollToTaxi }: TripPlannerProps) {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-semibold mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#053b32] text-emerald-300 border border-emerald-500/30 text-xs font-semibold mb-3">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Interactive AI Trip Builder</span>
           </div>
@@ -255,7 +256,7 @@ export default function TripPlanner({ onScrollToTaxi }: TripPlannerProps) {
         </div>
 
         {/* STEP 3: Your Morni Escape (Personalized Result Card) */}
-        <div className="max-w-4xl mx-auto bg-stone-800/95 border border-stone-700 rounded-3xl p-6 sm:p-10 shadow-2xl backdrop-blur-md relative">
+        <div className="max-w-4xl mx-auto bg-[#053b32] border border-stone-700 rounded-3xl p-6 sm:p-10 shadow-2xl backdrop-blur-md relative">
           {/* Header Badge */}
           <div className="flex flex-wrap items-center justify-between gap-4 border-b border-stone-700 pb-6 mb-8">
             <div>

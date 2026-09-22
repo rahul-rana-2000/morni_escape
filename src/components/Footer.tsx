@@ -22,37 +22,40 @@ export default function Footer({
   onScrollToTaxi,
 }: FooterProps) {
   return (
-    <footer className="bg-stone-950 text-stone-300 pt-16 pb-12 border-t border-stone-800">
+    <footer className="bg-[#053b32] text-[#e7e5db] pt-16 pb-12 border-t border-emerald-300/15">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-stone-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="bg-white/95 rounded-xl p-1.5 shadow-md">
-                <Image
-                  src="/Morni-escape.png"
-                  alt="Morni Escape"
-                  width={130}
-                  height={42}
-                  className="h-9 w-auto object-contain"
-                />
-              </div>
+
+
+              <Image
+                src="/Morni-escape.png"
+                alt="Morni Escape Logo"
+                width={260}
+                height={90}
+                className="h-14 sm:h-18 w-auto object-contain group-hover:scale-105 transition-transform"
+                priority
+              />
+
+
             </div>
-            <p className="text-xs sm:text-sm text-stone-400 leading-relaxed max-w-sm">
+            <p className="text-xs sm:text-sm text-[#d8d4c8] leading-relaxed max-w-sm">
               Your comprehensive local digital guide to exploring Morni Hills, Haryana. Plan personalized escapes, discover lakeside camping, boutique stays, authentic Pahadi food, and book verified cabs.
             </p>
-            <div className="flex items-center gap-2 text-xs text-emerald-400">
+            {/* <div className="flex items-center gap-2 text-xs text-emerald-400">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
               <span>Welcoming travelers 365 days a year</span>
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
           <div className="space-y-3">
-            <h4 className="text-white text-xs font-bold uppercase tracking-wider">
+            <h4 className="text-[#f5f5ee] text-xs font-bold uppercase tracking-wider">
               Explore
             </h4>
-            <ul className="space-y-2 text-xs text-stone-400">
+            <ul className="space-y-2 text-xs text-[#d8d4c8]">
               <li>
                 <button
                   onClick={onScrollToExplore}
@@ -99,10 +102,10 @@ export default function Footer({
 
           {/* Planning & Cabs */}
           <div className="space-y-3">
-            <h4 className="text-white text-xs font-bold uppercase tracking-wider">
+            <h4 className="text-[#f5f5ee] text-xs font-bold uppercase tracking-wider">
               Plan & Transit
             </h4>
-            <ul className="space-y-2 text-xs text-stone-400">
+            <ul className="space-y-2 text-xs text-[#d8d4c8]">
               <li>
                 <button
                   onClick={onScrollToPlanner}
@@ -142,21 +145,21 @@ export default function Footer({
 
           {/* Emergency & Helpline */}
           <div className="space-y-3">
-            <h4 className="text-white text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+            <h4 className="text-[#f5f5ee] text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
               <ShieldAlert className="w-3.5 h-3.5 text-amber-400" />
               <span>Emergency Helplines</span>
             </h4>
-            <ul className="space-y-2 text-xs text-stone-400">
+            <ul className="space-y-2 text-xs text-[#d8d4c8]">
               <li className="flex items-center gap-1.5">
-                <Phone className="w-3 h-3 text-stone-500" />
+                <Phone className="w-3 h-3 text-emerald-200/70" />
                 <span>Morni Police Chowki: 112</span>
               </li>
               <li className="flex items-center gap-1.5">
-                <Phone className="w-3 h-3 text-stone-500" />
+                <Phone className="w-3 h-3 text-emerald-200/70" />
                 <span>Panchkula Civil Hospital: 108</span>
               </li>
               <li className="flex items-center gap-1.5">
-                <Phone className="w-3 h-3 text-stone-500" />
+                <Phone className="w-3 h-3 text-emerald-200/70" />
                 <span>Forest Range Office: 01733-250123</span>
               </li>
               <li className="flex items-center gap-1.5 text-emerald-400 font-medium">
@@ -168,14 +171,14 @@ export default function Footer({
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#b8b2a3]">
           <div>
             © {new Date().getFullYear()} MORNI ESCAPE. Crafted for nature lovers and weekend explorers.
           </div>
           <div className="flex items-center gap-1">
             <span>Made with</span>
             <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500" />
-            <span>for Shivalik Hills Tourism</span>
+            <span>for Rahul Rana</span>
           </div>
         </div>
       </div>
