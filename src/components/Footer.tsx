@@ -9,7 +9,6 @@ import {
   Car,
 } from "lucide-react";
 import Image from "next/image";
-
 interface FooterProps {
   onScrollToExplore: () => void;
   onScrollToPlanner: () => void;
@@ -22,24 +21,24 @@ export default function Footer({
   onScrollToTaxi,
 }: FooterProps) {
   return (
-    <footer className="bg-[#053b32] text-[#e7e5db] pt-16 pb-12 border-t border-emerald-300/15">
+    <footer className="bg-[#0a2b22] text-[#e7e5db] pt-16 pb-12 border-t border-emerald-300/15">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
+            
 
+                <Image
+                  src="/mornii-escape.png"
+                  alt="Morni Escape Logo"
+                  width={260}
+                  height={100}
+                  className="h-18 sm:h-22 w-auto object-contain group-hover:scale-105 transition-transform"
+                  priority
+                />
 
-              <Image
-                src="/Morni-escape.png"
-                alt="Morni Escape Logo"
-                width={260}
-                height={90}
-                className="h-14 sm:h-18 w-auto object-contain group-hover:scale-105 transition-transform"
-                priority
-              />
-
-
+             
             </div>
             <p className="text-xs sm:text-sm text-[#d8d4c8] leading-relaxed max-w-sm">
               Your comprehensive local digital guide to exploring Morni Hills, Haryana. Plan personalized escapes, discover lakeside camping, boutique stays, authentic Pahadi food, and book verified cabs.
