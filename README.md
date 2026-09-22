@@ -16,7 +16,19 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Edit website content manually
+
+Most repeatable website content has one editable source:
+
+- Places, stays, food, camping, activities, photo spots and taxi listings: `src/data/morniData.ts` → `EXPLORE_ITEMS`
+- Explore category labels: `src/data/morniData.ts` → `EXPLORE_CATEGORIES`
+- Taxi cards: `src/data/morniData.ts` → `TAXI_PACKAGES`
+- Trip planner itineraries: `src/data/morniData.ts` → `ITINERARY_DATABASE`
+- FAQs: `src/data/morniData.ts` → `MORNI_FAQS`
+
+Save the file while `npm run dev` is running; the page will normally refresh within a second. For a live/deployed website, commit and deploy the change (or rebuild the production server), then refresh the browser with `Ctrl+Shift+R` / `Cmd+Shift+R` if it still shows cached content.
+
+For one-off headings, buttons, or layout edits, update `src/app/page.tsx` directly.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
