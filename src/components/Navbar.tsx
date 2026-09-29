@@ -36,7 +36,7 @@ export default function Navbar({
   return (
     <header className="sticky top-0 z-40 w-full border-b border-stone-200/80 bg-white/95 backdrop-blur-md transition-all shadow-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 sm:h-22">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           <div className="flex items-center gap-6 lg:gap-10">
             <a href="#" className="flex items-center group focus:outline-hidden py-1">
               <div className="relative flex items-center">
