@@ -6,8 +6,6 @@ import {
   Sparkles,
   Navigation,
   X,
-  ChevronLeft,
-  ChevronRight,
 } from "lucide-react";
 
 interface HeroProps {
@@ -67,16 +65,8 @@ export default function Hero({
     return () => clearInterval(timer);
   }, []);
 
-  // const handlePrev = () => {
-  //   setCurrentSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
-  // };
-
-  // const handleNext = () => {
-  //   setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-  // };
-
   return (
-    <section className="relative overflow-hidden text-white pt-32 pb-20 md:pt-36 md:pb-28 min-h-[640px] flex items-center justify-center">
+    <section className="relative overflow-hidden text-white min-h-[calc(100vh-3.5rem)] sm:min-h-[calc(100vh-4rem)] lg:h-[calc(100vh-4rem)] flex flex-col justify-center py-4 sm:py-6">
       {/* Background Carousel Images with Smooth Crossfade */}
       <div className="absolute inset-0 overflow-hidden">
         {HERO_SLIDES.map((slide, idx) => (
@@ -101,56 +91,36 @@ export default function Hero({
         <div className="absolute top-1/2 -right-32 w-96 h-96 bg-teal-400 rounded-full blur-3xl" />
       </div>
 
-      {/* Bottom Fade to Content */}
-      <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-stone-50/90 to-transparent pointer-events-none" />
-
-      {/* Left / Right Carousel Controls */}
-      {/* <button
-        onClick={handlePrev}
-        aria-label="Previous slide"
-        className="hidden md:flex absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 items-center justify-center rounded-full bg-black/35 hover:bg-black/65 text-white/80 hover:text-white border border-white/20 backdrop-blur-md transition-all cursor-pointer shadow-lg active:scale-95"
-      >
-        <ChevronLeft className="w-6 h-6" />
-      </button>
-
-      <button
-        onClick={handleNext}
-        aria-label="Next slide"
-        className="hidden md:flex absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 items-center justify-center rounded-full bg-black/35 hover:bg-black/65 text-white/80 hover:text-white border border-white/20 backdrop-blur-md transition-all cursor-pointer shadow-lg active:scale-95"
-      >
-        <ChevronRight className="w-6 h-6" />
-      </button> */}
-
-      {/* Main Content Container */}
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-20">
+      {/* Main Content Container - Compact & Fits in Single Screen */}
+      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-20 flex flex-col items-center justify-center">
         {/* Dynamic Top Tagline Pill */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/25 border border-emerald-400/40 text-emerald-200 text-xs sm:text-sm font-medium mb-6 shadow-inner backdrop-blur-md animate-fade-in transition-all">
-          <Sparkles className="w-4 h-4 text-emerald-300" />
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-500/25 border border-emerald-400/40 text-emerald-200 text-xs font-medium mb-2 sm:mb-3 shadow-inner backdrop-blur-md animate-fade-in transition-all">
+          <Sparkles className="w-3.5 h-3.5 text-emerald-300" />
           <span>{HERO_SLIDES[currentSlide].tagline}</span>
         </div>
 
         {/* Main Heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-4 drop-shadow-xl text-white">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-1 sm:mb-2 drop-shadow-xl text-white">
           MORNI ESCAPE{" "}
           <span className="inline-block animate-bounce">🌄</span>
         </h1>
 
         {/* Sub Heading */}
-        <p className="text-lg sm:text-xl md:text-2xl font-light text-stone-100 max-w-2xl mx-auto mb-8 leading-relaxed drop-shadow-md">
+        <p className="text-sm sm:text-base md:text-lg font-light text-stone-100 max-w-xl mx-auto mb-3 sm:mb-4 leading-relaxed drop-shadow-md">
           Plan Your Perfect Morni Trip
         </p>
 
         {/* Search Bar */}
-        <div className="max-w-2xl mx-auto mb-6">
+        <div className="w-full max-w-xl mx-auto mb-3 sm:mb-4">
           <div
-            className={`relative flex items-center bg-white rounded-2xl p-2 shadow-2xl transition-all duration-300 border-2 ${
+            className={`relative flex items-center bg-white rounded-2xl p-1.5 sm:p-2 shadow-2xl transition-all duration-300 border-2 ${
               isFocused
                 ? "border-emerald-500 ring-4 ring-emerald-500/20 shadow-emerald-950/40 scale-[1.01]"
                 : "border-stone-200 shadow-stone-950/40"
             }`}
           >
             <div className="pl-3 pr-2 text-stone-400">
-              <Search className="w-6 h-6 text-emerald-600" />
+              <Search className="w-5 h-5 text-emerald-600" />
             </div>
 
             <input
@@ -160,32 +130,32 @@ export default function Hero({
               onFocus={() => setIsFocused(true)}
               onBlur={() => setIsFocused(false)}
               placeholder="Where do you want to go? (e.g. Tikkar Taal, Camping, Fort...)"
-              className="w-full py-3 px-2 text-stone-800 text-base sm:text-lg focus:outline-none placeholder-stone-400 font-medium"
+              className="w-full py-1.5 sm:py-2 px-1 text-stone-800 text-sm sm:text-base focus:outline-none placeholder-stone-400 font-medium"
             />
 
             {searchQuery && (
               <button
                 onClick={() => onSearchChange("")}
-                className="p-1.5 rounded-full hover:bg-stone-100 text-stone-400 hover:text-stone-700 mr-1 cursor-pointer"
+                className="p-1 rounded-full hover:bg-stone-100 text-stone-400 hover:text-stone-700 mr-1 cursor-pointer"
                 aria-label="Clear search"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4" />
               </button>
             )}
 
             <button
               onClick={onStartPlanning}
-              className="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white font-semibold px-6 py-3 rounded-xl transition-all shadow-md active:scale-95 cursor-pointer"
+              className="inline-flex items-center gap-1.5 bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white font-semibold px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl transition-all shadow-md active:scale-95 cursor-pointer text-xs sm:text-sm"
             >
               <span>Explore</span>
-              <Navigation className="w-4 h-4" />
+              <Navigation className="w-3.5 h-3.5" />
             </button>
           </div>
         </div>
 
         {/* Popular Quick Filter Chips */}
-        <div className="flex flex-wrap items-center justify-center gap-2 max-w-3xl mx-auto text-xs sm:text-sm">
-          <span className="text-white/80 text-xs uppercase tracking-wider font-semibold mr-1">
+        <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 max-w-2xl mx-auto text-[11px] sm:text-xs mb-3 sm:mb-4">
+          <span className="text-white/80 text-[11px] uppercase tracking-wider font-semibold mr-1">
             Popular:
           </span>
 
@@ -193,7 +163,7 @@ export default function Hero({
             <button
               key={chip}
               onClick={() => onQuickChipClick(chip)}
-              className="px-3 py-1.5 rounded-full bg-black/35 hover:bg-black/55 border border-white/25 text-white hover:text-white transition-all backdrop-blur-sm active:scale-95 cursor-pointer shadow-xs"
+              className="px-2.5 py-1 rounded-full bg-black/35 hover:bg-black/55 border border-white/20 text-white hover:text-white transition-all backdrop-blur-sm active:scale-95 cursor-pointer shadow-xs"
             >
               {chip}
             </button>
@@ -201,46 +171,46 @@ export default function Hero({
         </div>
 
         {/* Quick Highlights Info Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto mt-12 pt-8 border-t border-white/20 text-left">
-          <div className="p-3 rounded-xl bg-black/30 border border-white/15 backdrop-blur-sm">
-            <div className="text-emerald-300 font-bold text-lg sm:text-xl">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 max-w-3xl w-full mx-auto mt-2 sm:mt-3 pt-3 sm:pt-4 border-t border-white/20 text-left">
+          <div className="p-2 sm:p-2.5 rounded-xl bg-black/30 border border-white/15 backdrop-blur-sm">
+            <div className="text-emerald-300 font-bold text-base sm:text-lg">
               42 km
             </div>
-            <div className="text-white/85 text-xs">
+            <div className="text-white/85 text-[11px] sm:text-xs">
               From Chandigarh (1 hr)
             </div>
           </div>
 
-          <div className="p-3 rounded-xl bg-black/30 border border-white/15 backdrop-blur-sm">
-            <div className="text-emerald-300 font-bold text-lg sm:text-xl">
+          <div className="p-2 sm:p-2.5 rounded-xl bg-black/30 border border-white/15 backdrop-blur-sm">
+            <div className="text-emerald-300 font-bold text-base sm:text-lg">
               1,220 m
             </div>
-            <div className="text-white/85 text-xs">
+            <div className="text-white/85 text-[11px] sm:text-xs">
               Peak Elevation & Pines
             </div>
           </div>
 
-          <div className="p-3 rounded-xl bg-black/30 border border-white/15 backdrop-blur-sm">
-            <div className="text-emerald-300 font-bold text-lg sm:text-xl">
+          <div className="p-2 sm:p-2.5 rounded-xl bg-black/30 border border-white/15 backdrop-blur-sm">
+            <div className="text-emerald-300 font-bold text-base sm:text-lg">
               Twin Lakes
             </div>
-            <div className="text-white/85 text-xs">
+            <div className="text-white/85 text-[11px] sm:text-xs">
               Tikkar Bada & Chhota
             </div>
           </div>
 
-          <div className="p-3 rounded-xl bg-black/30 border border-white/15 backdrop-blur-sm">
-            <div className="text-emerald-300 font-bold text-lg sm:text-xl">
+          <div className="p-2 sm:p-2.5 rounded-xl bg-black/30 border border-white/15 backdrop-blur-sm">
+            <div className="text-emerald-300 font-bold text-base sm:text-lg">
               17th Cent.
             </div>
-            <div className="text-white/85 text-xs">
+            <div className="text-white/85 text-[11px] sm:text-xs">
               Historic Morni Fort
             </div>
           </div>
         </div>
 
         {/* Carousel Indicator Dots ("dot dot krke crousel chlta rhe") */}
-        <div className="flex items-center justify-center gap-2.5 mt-8 z-30 relative">
+        <div className="flex items-center justify-center gap-2 mt-3 sm:mt-4 z-30 relative">
           {HERO_SLIDES.map((slide, idx) => (
             <button
               key={idx}
@@ -248,8 +218,8 @@ export default function Hero({
               aria-label={`Go to slide ${idx + 1}: ${slide.badge}`}
               className={`transition-all duration-500 rounded-full cursor-pointer ${
                 idx === currentSlide
-                  ? "w-8 h-2.5 bg-emerald-400 shadow-md shadow-emerald-500/50"
-                  : "w-2.5 h-2.5 bg-white/40 hover:bg-white/80"
+                  ? "w-7 h-2 bg-emerald-400 shadow-md shadow-emerald-500/50"
+                  : "w-2 h-2 bg-white/40 hover:bg-white/80"
               }`}
             />
           ))}
