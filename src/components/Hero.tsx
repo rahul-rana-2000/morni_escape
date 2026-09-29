@@ -32,17 +32,22 @@ const HERO_SLIDES = [
     badge: "Morni Hills View 🌄",
   },
   {
-    url: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2000&q=80",
+    url: "/morni4.jpeg",
     tagline: "Serene Boating & Twin Lakes at Tikkar Taal",
     badge: "Tikkar Taal Lakes 🚣",
   },
   {
-    url: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=80",
+    url: "/morni2.jpeg",
     tagline: "Karoh Peak Trails & Ancient 17th Century Fort",
     badge: "Highest Peak in Haryana 🥾",
   },
   {
-    url: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=2000&q=80",
+    url: "/morni3.jpeg",
+    tagline: "Starry Night Camping & Campfire Retreats",
+    badge: "Pine Forest Camping 🏕️",
+  },
+  {
+    url: "/morni1.jpeg",
     tagline: "Starry Night Camping & Campfire Retreats",
     badge: "Pine Forest Camping 🏕️",
   },
