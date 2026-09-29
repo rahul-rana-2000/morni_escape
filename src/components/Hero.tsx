@@ -76,7 +76,7 @@ export default function Hero({
   // };
 
   return (
-    <section className="relative overflow-hidden text-white pt-32 pb-20 md:pt-36 md:pb-28 min-h-[640px] flex items-center justify-center">
+    <section className="relative overflow-hidden text-white pt-10 pb-10 md:pt-36 md:pb-28 min-h-[640px] flex items-center justify-center">
       {/* Background Carousel Images with Smooth Crossfade */}
       <div className="absolute inset-0 overflow-hidden">
         {HERO_SLIDES.map((slide, idx) => (

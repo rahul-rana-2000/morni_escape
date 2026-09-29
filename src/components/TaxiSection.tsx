@@ -62,7 +62,7 @@ export default function TaxiSection() {
           {TAXI_PACKAGES.map((pkg) => (
             <div
               key={pkg.id}
-              className="bg-white rounded-3xl border border-stone-200/90 shadow-xs hover:shadow-xl hover:border-amber-400 transition-all flex flex-col justify-between overflow-hidden group"
+              className="bg-white rounded-3xl border border-stone-200/90 shadow-xs hover:shadow-xl hover:border-emerald-300 transition-all flex flex-col justify-between overflow-hidden group"
             >
               <div className="p-6">
                 {/* Popular badge */}
@@ -116,7 +116,7 @@ export default function TaxiSection() {
               <div className="p-6 pt-0 mt-auto">
                 <button
                   onClick={() => handleBookCab(pkg)}
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-stone-900 group-hover:bg-amber-600 text-white text-xs font-bold transition-colors cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#0a2b22] group hover:bg-emerald-700 text-white text-xs font-bold transition-colors cursor-pointer"
                 >
                   <PhoneCall className="w-3.5 h-3.5" />
                   <span>Book on WhatsApp</span>

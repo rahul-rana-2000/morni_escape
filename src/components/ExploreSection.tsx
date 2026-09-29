@@ -63,10 +63,10 @@ export default function ExploreSection({
             <Sparkles className="w-3.5 h-3.5" />
             <span>Discover Morni Hills</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0a2b22] tracking-tight">
             Explore Morni
           </h2>
-          <p className="mt-2 text-base sm:text-lg text-stone-600">
+          <p className="mt-2 text-base sm:text-lg text-[#0a2b22]">
             Click on any category to explore hidden gems, lake activities, authentic hill food, and luxury stays.
           </p>
         </div>
@@ -230,7 +230,7 @@ export default function ExploreSection({
                     <div className="flex items-center gap-2">
                       <button
                         onClick={() => onItemSelect(item)}
-                        className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-stone-900 hover:bg-emerald-700 text-white text-xs font-semibold transition-colors cursor-pointer"
+                        className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-[#0a2b22] hover:bg-emerald-700 text-white text-xs font-semibold transition-colors cursor-pointer"
                       >
                         <span>View Details</span>
                         <ArrowRight className="w-3.5 h-3.5" />
