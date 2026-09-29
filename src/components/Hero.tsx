@@ -72,11 +72,10 @@ export default function Hero({
         {HERO_SLIDES.map((slide, idx) => (
           <div
             key={idx}
-            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-1000 ease-in-out ${
-              idx === currentSlide
-                ? "opacity-100 scale-105"
-                : "opacity-0 scale-100 pointer-events-none"
-            }`}
+            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-1000 ease-in-out ${idx === currentSlide
+              ? "opacity-100 scale-105"
+              : "opacity-0 scale-100 pointer-events-none"
+              }`}
             style={{ backgroundImage: `url('${slide.url}')` }}
           />
         ))}
@@ -111,13 +110,13 @@ export default function Hero({
         </p>
 
         {/* Search Bar */}
-        <div className="w-full max-w-xl mx-auto mb-3 sm:mb-4">
+        <div className="w-full max-w-xl mx-auto mb-3 sm:mb-4 flex items-center gap-2">
+          {/* Search Input */}
           <div
-            className={`relative flex items-center bg-white rounded-2xl p-1.5 sm:p-2 shadow-2xl transition-all duration-300 border-2 ${
-              isFocused
+            className={`relative flex-1 flex items-center bg-white rounded-2xl p-1.5 sm:p-2 shadow-2xl transition-all duration-300 border-2 ${isFocused
                 ? "border-emerald-500 ring-4 ring-emerald-500/20 shadow-emerald-950/40 scale-[1.01]"
                 : "border-stone-200 shadow-stone-950/40"
-            }`}
+              }`}
           >
             <div className="pl-3 pr-2 text-stone-400">
               <Search className="w-5 h-5 text-emerald-600" />
@@ -130,7 +129,7 @@ export default function Hero({
               onFocus={() => setIsFocused(true)}
               onBlur={() => setIsFocused(false)}
               placeholder="Where do you want to go? (e.g. Tikkar Taal, Camping, Fort...)"
-              className="w-full py-1.5 sm:py-2 px-1 text-stone-800 text-sm sm:text-base focus:outline-none placeholder-stone-400 font-medium"
+              className="w-full py-1 sm:py-1.5 px-1 text-stone-800 text-sm sm:text-base focus:outline-none placeholder-stone-400 font-medium"
             />
 
             {searchQuery && (
@@ -142,17 +141,17 @@ export default function Hero({
                 <X className="w-4 h-4" />
               </button>
             )}
-
-            <button
-              onClick={onStartPlanning}
-              className="inline-flex items-center gap-1.5 bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white font-semibold px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl transition-all shadow-md active:scale-95 cursor-pointer text-xs sm:text-sm"
-            >
-              <span>Explore</span>
-              <Navigation className="w-3.5 h-3.5" />
-            </button>
           </div>
-        </div>
 
+          {/* Explore Button - Input ke bahar */}
+          <button
+            onClick={onStartPlanning}
+            className="inline-flex items-center gap-1.5 bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white font-semibold px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl transition-all shadow-md active:scale-95 cursor-pointer text-xs sm:text-sm shrink-0"
+          >
+            <span>Explore</span>
+            <Navigation className="w-3.5 h-3.5" />
+          </button>
+        </div>
         {/* Popular Quick Filter Chips */}
         <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 max-w-2xl mx-auto text-[11px] sm:text-xs mb-3 sm:mb-4">
           <span className="text-white/80 text-[11px] uppercase tracking-wider font-semibold mr-1">
@@ -216,11 +215,10 @@ export default function Hero({
               key={idx}
               onClick={() => setCurrentSlide(idx)}
               aria-label={`Go to slide ${idx + 1}: ${slide.badge}`}
-              className={`transition-all duration-500 rounded-full cursor-pointer ${
-                idx === currentSlide
-                  ? "w-7 h-2 bg-emerald-400 shadow-md shadow-emerald-500/50"
-                  : "w-2 h-2 bg-white/40 hover:bg-white/80"
-              }`}
+              className={`transition-all duration-500 rounded-full cursor-pointer ${idx === currentSlide
+                ? "w-7 h-2 bg-emerald-400 shadow-md shadow-emerald-500/50"
+                : "w-2 h-2 bg-white/40 hover:bg-white/80"
+                }`}
             />
           ))}
         </div>
